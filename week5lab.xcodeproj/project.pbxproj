@@ -14,6 +14,14 @@
 		8A62DD111AD54D3600E23816 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A62DD101AD54D3600E23816 /* Images.xcassets */; };
 		8A62DD141AD54D3600E23816 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A62DD121AD54D3600E23816 /* LaunchScreen.xib */; };
 		8A62DD201AD54D3600E23816 /* week5labTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62DD1F1AD54D3600E23816 /* week5labTests.m */; };
+		8A62DD2A1AD54D4C00E23816 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A62DD291AD54D4C00E23816 /* CoreData.framework */; };
+		8A62DD2D1AD54D7F00E23816 /* ReminderModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A62DD2B1AD54D7F00E23816 /* ReminderModel.xcdatamodeld */; };
+		8A62DD361AD54F7400E23816 /* ReminderListTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62DD351AD54F7400E23816 /* ReminderListTableTableViewController.m */; };
+		8A62DD391AD54F9200E23816 /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62DD381AD54F9200E23816 /* ReminderCell.m */; };
+		8A62DD3C1AD54FB500E23816 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62DD3B1AD54FB500E23816 /* AddReminderViewController.m */; };
+		8A62DD3F1AD54FCB00E23816 /* EditReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62DD3E1AD54FCB00E23816 /* EditReminderViewController.m */; };
+		8A62DD421AD55D1000E23816 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62DD411AD55D1000E23816 /* Reminder.m */; };
+		8A62DD451AD55D1000E23816 /* ReminderList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A62DD441AD55D1000E23816 /* ReminderList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,20 @@
 		8A62DD191AD54D3600E23816 /* week5labTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = week5labTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A62DD1E1AD54D3600E23816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A62DD1F1AD54D3600E23816 /* week5labTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = week5labTests.m; sourceTree = "<group>"; };
+		8A62DD291AD54D4C00E23816 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8A62DD2C1AD54D7F00E23816 /* ReminderModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReminderModel.xcdatamodel; sourceTree = "<group>"; };
+		8A62DD341AD54F7400E23816 /* ReminderListTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderListTableTableViewController.h; sourceTree = "<group>"; };
+		8A62DD351AD54F7400E23816 /* ReminderListTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderListTableTableViewController.m; sourceTree = "<group>"; };
+		8A62DD371AD54F9200E23816 /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
+		8A62DD381AD54F9200E23816 /* ReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCell.m; sourceTree = "<group>"; };
+		8A62DD3A1AD54FB500E23816 /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderViewController.h; sourceTree = "<group>"; };
+		8A62DD3B1AD54FB500E23816 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
+		8A62DD3D1AD54FCB00E23816 /* EditReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditReminderViewController.h; sourceTree = "<group>"; };
+		8A62DD3E1AD54FCB00E23816 /* EditReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditReminderViewController.m; sourceTree = "<group>"; };
+		8A62DD401AD55D1000E23816 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		8A62DD411AD55D1000E23816 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		8A62DD431AD55D1000E23816 /* ReminderList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderList.h; sourceTree = "<group>"; };
+		8A62DD441AD55D1000E23816 /* ReminderList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A62DD2A1AD54D4C00E23816 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 		8A62DCF71AD54D3600E23816 = {
 			isa = PBXGroup;
 			children = (
+				8A62DD291AD54D4C00E23816 /* CoreData.framework */,
 				8A62DD021AD54D3600E23816 /* week5lab */,
 				8A62DD1C1AD54D3600E23816 /* week5labTests */,
 				8A62DD011AD54D3600E23816 /* Products */,
@@ -89,6 +113,19 @@
 				8A62DD101AD54D3600E23816 /* Images.xcassets */,
 				8A62DD121AD54D3600E23816 /* LaunchScreen.xib */,
 				8A62DD031AD54D3600E23816 /* Supporting Files */,
+				8A62DD2B1AD54D7F00E23816 /* ReminderModel.xcdatamodeld */,
+				8A62DD431AD55D1000E23816 /* ReminderList.h */,
+				8A62DD441AD55D1000E23816 /* ReminderList.m */,
+				8A62DD401AD55D1000E23816 /* Reminder.h */,
+				8A62DD411AD55D1000E23816 /* Reminder.m */,
+				8A62DD341AD54F7400E23816 /* ReminderListTableTableViewController.h */,
+				8A62DD351AD54F7400E23816 /* ReminderListTableTableViewController.m */,
+				8A62DD371AD54F9200E23816 /* ReminderCell.h */,
+				8A62DD381AD54F9200E23816 /* ReminderCell.m */,
+				8A62DD3A1AD54FB500E23816 /* AddReminderViewController.h */,
+				8A62DD3B1AD54FB500E23816 /* AddReminderViewController.m */,
+				8A62DD3D1AD54FCB00E23816 /* EditReminderViewController.h */,
+				8A62DD3E1AD54FCB00E23816 /* EditReminderViewController.m */,
 			);
 			path = week5lab;
 			sourceTree = "<group>";
@@ -219,9 +256,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A62DD3F1AD54FCB00E23816 /* EditReminderViewController.m in Sources */,
+				8A62DD361AD54F7400E23816 /* ReminderListTableTableViewController.m in Sources */,
 				8A62DD0C1AD54D3600E23816 /* ViewController.m in Sources */,
+				8A62DD2D1AD54D7F00E23816 /* ReminderModel.xcdatamodeld in Sources */,
+				8A62DD421AD55D1000E23816 /* Reminder.m in Sources */,
 				8A62DD091AD54D3600E23816 /* AppDelegate.m in Sources */,
+				8A62DD3C1AD54FB500E23816 /* AddReminderViewController.m in Sources */,
 				8A62DD061AD54D3600E23816 /* main.m in Sources */,
+				8A62DD391AD54F9200E23816 /* ReminderCell.m in Sources */,
+				8A62DD451AD55D1000E23816 /* ReminderList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +466,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8A62DD2B1AD54D7F00E23816 /* ReminderModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8A62DD2C1AD54D7F00E23816 /* ReminderModel.xcdatamodel */,
+			);
+			currentVersion = 8A62DD2C1AD54D7F00E23816 /* ReminderModel.xcdatamodel */;
+			path = ReminderModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8A62DCF81AD54D3600E23816 /* Project object */;
 }

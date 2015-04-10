@@ -17,6 +17,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
+                                       initWithManagedObjectModel:self.managedObjectModel];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths lastObject];
+    NSURL *storeUrl = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathExtension:@"Reminder1.sqlite"]];
+    NSError* error;
+    if(![self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                      configuration:nil URL:storeUrl options:nil error:&error])
+    {
+        NSLog(@"Could not open/create Persistent Store:\n%@", error.userInfo);
+    }
+    self.managedObjectContext = [[NSManagedObjectContext alloc] init];
+    self.managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+    UINavigationController* navController =
+    (UINavigationController*)self.window.rootViewController;
+    ReminderListTableTableViewController * listController = [navController.viewControllers firstObject];
+    listController.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 
