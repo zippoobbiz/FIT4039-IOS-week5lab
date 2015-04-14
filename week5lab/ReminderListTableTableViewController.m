@@ -95,7 +95,9 @@
         
     }else if([segue.identifier isEqualToString:@"editReminder"]){
         self.editcontroller = segue.destinationViewController;
-        self.editcontroller.delegate = self;
+        NSManagedObject* selectedReminder = (NSManagedObject *)[self.ReminderArray objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+        self.editcontroller.selectedReminder = selectedReminder;
     }
 }
 
@@ -117,22 +119,6 @@
     [self.tableView reloadData];
 }
 
--(void)editReminder:(Reminder *)reminder
-{
-    [self.currentListObject addMembersObject:reminder];
-    self.ReminderArray = [self.currentListObject.members allObjects];
-    self.ReminderArray = [self.ReminderArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSDate *first = [(Reminder*)a dueDate];
-        NSDate *second = [(Reminder*)b dueDate];
-        return [first compare:second];
-    }];
-    NSError* error;
-    if(![self.managedObjectContext save:&error])
-    {
-        NSLog(@"Could not save monster insertion:\n%@", error.userInfo);
-    }
-    [self.tableView reloadData];
-}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -154,13 +140,8 @@
     }
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.currentIndex = indexPath.row;
-    Reminder* r = [self.ReminderArray objectAtIndex:indexPath.row];
-    _editcontroller.currentReminder = r;
-    [self.currentListObject removeMembersObject:r];
-    self.ReminderArray = [self.currentListObject.members allObjects];
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//}
 
 /*
 // Override to support conditional editing of the table view.

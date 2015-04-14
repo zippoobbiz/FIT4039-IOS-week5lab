@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Reminder.h"
 
-@protocol editReminderProtocol <NSObject>
-
--(void)editReminder:(Reminder *)reminder;
-
-@end
-
-
 @interface EditReminderViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
@@ -26,8 +19,8 @@
 - (IBAction)save:(id)sender;
 
 @property (strong, nonatomic) Reminder* currentReminder;
-@property (strong, nonatomic) Reminder* originalReminder;
-@property (weak, nonatomic) id<editReminderProtocol> delegate;
+@property (strong,nonatomic) NSManagedObject* selectedReminder;
+@property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
 
 
 @end

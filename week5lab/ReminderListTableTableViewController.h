@@ -13,9 +13,8 @@
 #import "Reminder.h"
 #import "ReminderCell.h"
 
-@interface ReminderListTableTableViewController : UITableViewController <addReminderProtocol, editReminderProtocol>
+@interface ReminderListTableTableViewController : UITableViewController <addReminderProtocol>
 
-@property (nonatomic) int currentIndex;
 @property (strong, nonatomic) EditReminderViewController* editcontroller;
 @property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
 @property (strong, nonatomic) ReminderList* currentListObject;

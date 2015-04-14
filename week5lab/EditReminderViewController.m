@@ -17,23 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.originalReminder = self.currentReminder;
-    self.titleTextField.text = self.currentReminder.title;
-    self.descriptionTextField.text = self.currentReminder.descriptions;
-    self.dueDatePicker.date = self.currentReminder.dueDate;
-    if(self.currentReminder.completed.boolValue)
+    if (self.selectedReminder)
+    {
+        self.titleTextField.text = [self.selectedReminder valueForKey:@"title"];
+        self.descriptionTextField.text = [self.selectedReminder valueForKey:@"descriptions"];
+        self.dueDatePicker.date = [self.selectedReminder valueForKey:@"dueDate"];
+    }
+    
+    if([[self.selectedReminder valueForKey:@"completed"] boolValue])
     {
         [self.completedSwitch setOn:YES animated:YES];
     }else{
         [self.completedSwitch setOn:NO animated:YES];
     }
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(save:)];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(back:)];
-    
-    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     self.navigationItem.rightBarButtonItem = anotherButton;
-    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,23 +63,19 @@
 
 - (IBAction)save:(id)sender {
     
-    if(self.completedSwitch.on)
-    {
-        [self.currentReminder setCompleted:[NSNumber numberWithBool:YES]];
-    }else{
-        [self.currentReminder setCompleted:[NSNumber numberWithBool:NO]];
+    if (self.selectedReminder) {
+        [self.selectedReminder setValue:self.titleTextField.text forKey:@"title"];
+        [self.selectedReminder setValue:self.descriptionTextField.text forKey:@"descriptions"];
+        [self.selectedReminder setValue:self.dueDatePicker.date forKey:@"dueDate"];
+        [self.selectedReminder setValue:[NSNumber numberWithBool:self.completedSwitch.on ]forKey:@"completed"];
     }
-    
-    [self.currentReminder setTitle:self.titleTextField.text];
-    [self.currentReminder setDescriptions:self.descriptionTextField.text];
-    [self.currentReminder setDueDate:self.dueDatePicker.date];
-    [self.delegate editReminder:self.currentReminder];
+    NSError* saveError;
+    // Save the object to persistent store
+    if (![self.managedObjectContext save:&saveError]) {
+        NSLog(@"Unable to save managed object context.");
+        NSLog(@"%@, %@", saveError, saveError.localizedDescription);
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
-- (IBAction)back:(id)sender {
-    [self.delegate editReminder:self.originalReminder];
-    [self.navigationController popViewControllerAnimated:YES];
-}
 @end
