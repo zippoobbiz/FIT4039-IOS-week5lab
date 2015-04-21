@@ -86,7 +86,7 @@
         Reminder* r = [self.ReminderArray objectAtIndex:indexPath.row];
         cell.titleLabel.text = r.title;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.DateFormat =@"yyyy-MM-dd";
+        dateFormatter.dateFormat =@"yyyy-MM-dd";
         cell.dueDateLabel.text = [dateFormatter stringFromDate:r.dueDate];
         return cell;
     }

@@ -19,77 +19,63 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H3f-1K-Pxi" id="maH-O4-2eo">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUz-x8-VZZ">
-                                            <rect key="frame" x="21" y="50" width="548" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrf-dP-KLg">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="21" y="50" width="348" height="21"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="139" y="8" width="227" height="21"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tr6-mW-XUI">
-                                            <rect key="frame" x="21" y="8" width="548" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="dlj-8e-w5S"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSZ-M6-gg6">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="21" y="8" width="348" height="21"/>
-                                                <mask key="constraints">
-                                                    <exclude reference="dlj-8e-w5S"/>
-                                                </mask>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="139" y="44" width="227" height="21"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-wT-rGd">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="22" y="8" width="42" height="21"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tU-WQ-soC">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="22" y="44" width="79" height="21"/>
                                             </variation>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="BUz-x8-VZZ" firstAttribute="top" secondItem="tr6-mW-XUI" secondAttribute="bottom" constant="21" id="2K7-F3-YjF"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="tr6-mW-XUI" secondAttribute="trailing" constant="23" id="9aU-RV-jyF"/>
-                                        <constraint firstItem="tr6-mW-XUI" firstAttribute="trailing" secondItem="BUz-x8-VZZ" secondAttribute="trailing" id="KNp-5r-8Rr"/>
-                                        <constraint firstItem="tr6-mW-XUI" firstAttribute="leading" secondItem="maH-O4-2eo" secondAttribute="leadingMargin" constant="13" id="MAO-Le-E54"/>
-                                        <constraint firstItem="tr6-mW-XUI" firstAttribute="trailing" secondItem="BUz-x8-VZZ" secondAttribute="trailing" id="ZYf-Ff-jnI"/>
-                                        <constraint firstItem="tr6-mW-XUI" firstAttribute="top" secondItem="maH-O4-2eo" secondAttribute="topMargin" id="bza-tl-8mh"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="BUz-x8-VZZ" secondAttribute="bottom" constant="18.5" id="eES-oV-laq"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="tr6-mW-XUI" secondAttribute="trailing" constant="16" id="fLJ-YO-E5c"/>
-                                        <constraint firstItem="BUz-x8-VZZ" firstAttribute="top" secondItem="tr6-mW-XUI" secondAttribute="bottom" constant="21" id="loT-Ae-tId"/>
-                                        <constraint firstItem="tr6-mW-XUI" firstAttribute="top" secondItem="maH-O4-2eo" secondAttribute="topMargin" id="ndJ-Mr-tLd"/>
-                                        <constraint firstItem="BUz-x8-VZZ" firstAttribute="leading" secondItem="tr6-mW-XUI" secondAttribute="leading" id="vfa-U6-KtW"/>
-                                        <constraint firstItem="tr6-mW-XUI" firstAttribute="leading" secondItem="maH-O4-2eo" secondAttribute="leadingMargin" constant="6" id="xxz-Pn-y8T"/>
-                                        <constraint firstItem="tr6-mW-XUI" firstAttribute="leading" secondItem="BUz-x8-VZZ" secondAttribute="leading" id="zii-Hb-GwP"/>
-                                    </constraints>
                                     <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="ZYf-Ff-jnI"/>
-                                            <exclude reference="fLJ-YO-E5c"/>
-                                            <exclude reference="ndJ-Mr-tLd"/>
-                                            <exclude reference="xxz-Pn-y8T"/>
-                                            <exclude reference="2K7-F3-YjF"/>
-                                            <exclude reference="vfa-U6-KtW"/>
+                                        <mask key="subviews">
+                                            <exclude reference="rrf-dP-KLg"/>
+                                            <exclude reference="BSZ-M6-gg6"/>
+                                            <exclude reference="A8d-wT-rGd"/>
+                                            <exclude reference="4tU-WQ-soC"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
-                                        <mask key="constraints">
-                                            <exclude reference="9aU-RV-jyF"/>
-                                            <exclude reference="KNp-5r-8Rr"/>
-                                            <exclude reference="MAO-Le-E54"/>
-                                            <include reference="ZYf-Ff-jnI"/>
-                                            <exclude reference="bza-tl-8mh"/>
-                                            <include reference="fLJ-YO-E5c"/>
-                                            <include reference="ndJ-Mr-tLd"/>
-                                            <include reference="xxz-Pn-y8T"/>
-                                            <exclude reference="zii-Hb-GwP"/>
-                                            <include reference="2K7-F3-YjF"/>
-                                            <exclude reference="eES-oV-laq"/>
-                                            <exclude reference="loT-Ae-tId"/>
-                                            <include reference="vfa-U6-KtW"/>
+                                        <mask key="subviews">
+                                            <include reference="rrf-dP-KLg"/>
+                                            <include reference="BSZ-M6-gg6"/>
+                                            <include reference="A8d-wT-rGd"/>
+                                            <include reference="4tU-WQ-soC"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dueDateLabel" destination="BUz-x8-VZZ" id="2pN-at-u2J"/>
-                                    <outlet property="titleLabel" destination="tr6-mW-XUI" id="ehO-71-YTk"/>
+                                    <outlet property="dueDateLabel" destination="BSZ-M6-gg6" id="nIC-En-CeU"/>
+                                    <outlet property="titleLabel" destination="rrf-dP-KLg" id="NY7-kD-cGi"/>
                                     <segue destination="PPW-gp-fV1" kind="show" identifier="editReminder" id="Uts-HQ-Yd8"/>
                                 </connections>
                             </tableViewCell>
