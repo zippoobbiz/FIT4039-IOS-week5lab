@@ -30,7 +30,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"ReminderList"];
     NSError* error;
     NSArray* result = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -50,6 +49,16 @@
             return [first compare:second];
         }];
     }
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+
+    self.ReminderArray = [self.ReminderArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSDate *first = [(Reminder*)a dueDate];
+        NSDate *second = [(Reminder*)b dueDate];
+        return [first compare:second];
+    }];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

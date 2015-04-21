@@ -39,17 +39,36 @@
 
     NSString* title = self.titleTextField.text;
     NSString* description = self.descriptionTextField.text;
-    NSDate* date = self.dueDatePicker.date;
     
-    
-    Reminder *reminder = [NSEntityDescription insertNewObjectForEntityForName:@"Reminder"
-                                                       inManagedObjectContext:self.managedObjectContext];
-    [reminder setTitle:title];
-    [reminder setDescriptions:description];
-    [reminder setDueDate:date];
-    [reminder setCompleted:[NSNumber numberWithBool:NO]];
-    [self.delegate addReminder:reminder];
-    [self.navigationController popViewControllerAnimated:YES];
+    if([self.titleTextField.text isEqualToString:@""])
+    {
+        [self.titleTextField becomeFirstResponder];
+        [self alert:@"Please input title!"];
+    }else if([self.descriptionTextField.text isEqualToString:@""])
+    {
+        [self.descriptionTextField becomeFirstResponder];
+        [self alert:@"Please input description!"];
+    }else
+    {
+        NSDate* date = self.dueDatePicker.date;
+        
+        
+        Reminder *reminder = [NSEntityDescription insertNewObjectForEntityForName:@"Reminder"
+                                                           inManagedObjectContext:self.managedObjectContext];
+        [reminder setTitle:title];
+        [reminder setDescriptions:description];
+        [reminder setDueDate:date];
+        [reminder setCompleted:[NSNumber numberWithBool:NO]];
+        [self.delegate addReminder:reminder];
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }
+}
+
+-(void) alert:(NSString *)text{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:text delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStyleDefault;
+    [alert show];
 }
 
 @end

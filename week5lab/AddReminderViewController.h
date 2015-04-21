@@ -24,4 +24,6 @@
 
 @property (weak, nonatomic) id<addReminderProtocol> delegate;
 @property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
+
+-(void) alert:(NSString *)text;
 @end

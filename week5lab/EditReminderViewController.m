@@ -63,19 +63,36 @@
 
 - (IBAction)save:(id)sender {
     
-    if (self.selectedReminder) {
-        [self.selectedReminder setValue:self.titleTextField.text forKey:@"title"];
-        [self.selectedReminder setValue:self.descriptionTextField.text forKey:@"descriptions"];
-        [self.selectedReminder setValue:self.dueDatePicker.date forKey:@"dueDate"];
-        [self.selectedReminder setValue:[NSNumber numberWithBool:self.completedSwitch.on ]forKey:@"completed"];
+    if([self.titleTextField.text isEqualToString:@""])
+    {
+        [self.titleTextField becomeFirstResponder];
+        [self alert:@"Please input title!"];
+    }else if([self.descriptionTextField.text isEqualToString:@""])
+    {
+        [self.descriptionTextField becomeFirstResponder];
+        [self alert:@"Please input description!"];
+    }else
+    {
+        if (self.selectedReminder) {
+            [self.selectedReminder setValue:self.titleTextField.text forKey:@"title"];
+            [self.selectedReminder setValue:self.descriptionTextField.text forKey:@"descriptions"];
+            [self.selectedReminder setValue:self.dueDatePicker.date forKey:@"dueDate"];
+            [self.selectedReminder setValue:[NSNumber numberWithBool:self.completedSwitch.on ]forKey:@"completed"];
+        }
+        NSError* saveError;
+        // Save the object to persistent store
+        if (![self.managedObjectContext save:&saveError]) {
+            NSLog(@"Unable to save managed object context.");
+            NSLog(@"%@, %@", saveError, saveError.localizedDescription);
+        }
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    NSError* saveError;
-    // Save the object to persistent store
-    if (![self.managedObjectContext save:&saveError]) {
-        NSLog(@"Unable to save managed object context.");
-        NSLog(@"%@, %@", saveError, saveError.localizedDescription);
-    }
-    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void) alert:(NSString *)text{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:text delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStyleDefault;
+    [alert show];
 }
 
 @end

@@ -21,6 +21,6 @@
 @property (strong, nonatomic) Reminder* currentReminder;
 @property (strong,nonatomic) NSManagedObject* selectedReminder;
 @property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
-
+-(void) alert:(NSString *)text;
 
 @end
