@@ -34,7 +34,7 @@
     NSError* error;
     NSArray* result = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     if(result == nil) {
-        NSLog(@"Could not fetch Party:\n%@", error.userInfo); }
+        NSLog(@"Could not fetch table:\n%@", error.userInfo); }
     else if([result count] == 0)
     {
         self.currentListObject = [NSEntityDescription insertNewObjectForEntityForName:@"ReminderList"
@@ -123,7 +123,7 @@
     NSError* error;
     if(![self.managedObjectContext save:&error])
     {
-        NSLog(@"Could not save monster insertion:\n%@", error.userInfo);
+        NSLog(@"Could not save reminder insertion:\n%@", error.userInfo);
     }
     [self.tableView reloadData];
 }
